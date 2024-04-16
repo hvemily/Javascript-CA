@@ -1,0 +1,216 @@
+/* These are marked with an underscore: */
+@import url("./_variables.css");
+/* Feel free to add as many of these imports as you need */
+
+/*Inter import google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  
+}
+
+body {
+  background-color: black;
+  color: white;   
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden{
+  display: none;
+}
+
+/*footer*/
+
+footer{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+} 
+h6{
+  font-size: 15px;
+} 
+.logo-footer{
+  width: 100%;
+  max-width: 30px;
+  height: auto;
+}
+.footer-desktop{
+  display: none;
+}
+
+/*DESKTOP*/
+
+/*header*/
+.nav-grid, .logo, .burger{
+  display: none;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.desktop-header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 25px;
+  align-items: safe;
+  margin-bottom: 0px;
+  
+}
+
+.logo{
+  width: 100%;
+  max-width: 10%;
+  margin: 0;
+  
+}
+
+.desktop-logo{
+  width: 100%;
+  max-width: 100px;
+}
+
+ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.nav-header{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.logincart{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.search-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.searchbox{
+color: rgb(0, 0, 0);
+padding: 5px 5px 7px 7px;
+border-radius: 25px; 
+background: white;
+}
+
+
+/*footer*/
+
+.footer-logo{
+display: none;
+}
+
+.footer{
+width: 100%;
+font-family: inter;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-bottom: 25px;
+}
+
+.footer-desktop{
+width: 100%;
+font-family: inter;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+
+
+.h-six{
+margin: 0;
+}
+
+
+.logo, .insta, .face, .twitter{
+width: 100%;
+max-width: 30px;
+}
+
+
+.logo-footer{
+width: 100%;
+max-width: 100px;
+}
+
+.support{
+display: flex;
+flex-direction: column;
+text-align: left;
+}
+
+.about-footer{
+display: flex;
+flex-direction: column;
+text-align: left;
+}
+
+.profile{
+display: flex;
+flex-direction: column;
+text-align: left;
+}
+
+.some{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin-top: 10px;
+}
+
+.insta, .face, .twitter{
+width: 100%;
+max-width: 25px;
+margin-top: 5px;
+}
+
+.visa, .paypal, .mastercard, .apple-pay{
+display: flex;
+flex-direction: row;
+width: 100%;
+max-width: 25px;
+height: 20px;
+}
+
+.payment-options{
+display: flex;
+flex-direction: row;
+width: auto;
+gap: 10px;
+align-items: center;
+}
