@@ -1,19 +1,26 @@
-const baseURL = "https://v1.api.noroff.dev/gamehub/"
 
-const getGames = document.querySelector(".games")
+const gamesContainer = document.querySelector("games")
 
-async function getGames(){
-  
-  const req = await fetch(baseURL)
+const baseURL ="https://api.noroff.dev/api/v1/gamehub/"
 
-  const result = await req.json()
+var gamesArray = baseURL
 
-  console.log("game object", result)
 
-  const games = result.filter((games) => games.genre === "all")
+fetchGames();
 
-  for(let i = 0; i < games.length; i++)
+  async function fetchGames(){
 
-  getGames.innerHTML += `
-    <a href="./inde
-}
+      try{
+        const response = await fetch("https://api.noroff.dev/api/v1/gamehub/")
+
+        if(!response.ok){
+            throw new Error("Could not fetch resource");
+        }
+
+        const data = await response.json();
+        console.log(data);
+      }
+      catch(error){
+        console.error(error);
+      }
+  }
