@@ -1,5 +1,5 @@
 
-const gamesContainer = document.querySelector("games")
+const gamesContainer = document.getElementById("#games");
 
 const baseURL ="https://api.noroff.dev/api/v1/gamehub/"
 
@@ -11,7 +11,7 @@ fetchGames();
   async function fetchGames(){
 
       try{
-        const response = await fetch("https://api.noroff.dev/api/v1/gamehub/")
+        const response = await fetch(baseURL)
 
         if(!response.ok){
             throw new Error("Could not fetch resource");
@@ -24,3 +24,4 @@ fetchGames();
         console.error(error);
       }
   }
+
