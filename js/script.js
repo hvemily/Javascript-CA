@@ -21,7 +21,8 @@ import { getGames } from "./fetch-api.js"
     } else{
       errorContainer.innerHTML = ""
 
-      
+    }
+
 
 
       // errorContainer.innerHTML += `<div class="error">
@@ -31,7 +32,7 @@ import { getGames } from "./fetch-api.js"
     
       //   </div>`;
     
-    }
+ 
 
       // try{
       //   const response = await fetch(baseURL)
