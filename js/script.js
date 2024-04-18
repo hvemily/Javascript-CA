@@ -9,12 +9,15 @@ import { getGames } from "./fetch-api.js"
     
     if(allGames.error === false){
     
-      gamesList = allGames
+      gamesList = allGames.games
     
       gamesContainer.innerHTML = ""
     
      for(let i = 0; i < gamesList.length; i++){   
-          gamesContainer.innerHTML += `<img src="${gamesList[i].data.image.url}" alt="">
+          gamesContainer.innerHTML += `<div>  
+            <img src="${gamesList[i].image}" alt="">
+            <p>hei</p>
+           </div>
                `
          }
     

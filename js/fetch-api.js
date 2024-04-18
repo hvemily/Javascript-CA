@@ -9,7 +9,7 @@ export async function getGames(){
 
             const result = await req.json()
             const data = {
-                movies : result,
+                games : result,
                 error : false,
             }
     
@@ -19,7 +19,7 @@ export async function getGames(){
 
         }else{
             const data = {
-                movies : [],
+                games : [],
                 error : true,
                 msg : "Error fetching API",
                 status : 404,
