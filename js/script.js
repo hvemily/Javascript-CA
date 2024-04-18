@@ -21,7 +21,7 @@ import { getGames } from "./fetch-api.js"
     } else{
       errorContainer.innerHTML = ""
 
-      console.log(gamesContainer);
+      
 
 
       // errorContainer.innerHTML += `<div class="error">

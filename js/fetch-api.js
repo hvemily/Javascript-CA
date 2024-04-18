@@ -1,4 +1,4 @@
-const baseURL = "https://v2.api.noroff.dev/gamehub/"
+const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 
 export async function getGames(){   
@@ -32,4 +32,4 @@ export async function getGames(){
 
      
    
-}
+    }
