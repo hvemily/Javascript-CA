@@ -1,6 +1,3 @@
-/* These are marked with an underscore: */
-@import url("./_variables.css");
-/* Feel free to add as many of these imports as you need */
 
 /*Inter import google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
@@ -227,7 +224,7 @@ align-items: center;
   text-align: center;
 }
 
-.game img{
+.gamesList img{
   width: 100%;
-  max-width: 200px;
+  max-width: 350px;
 }
