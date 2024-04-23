@@ -13,13 +13,11 @@ import { getGames } from "./fetch-api.js"
     
       gamesContainer.innerHTML = ""
     
-     for(let i = 0; i < gamesList.length; i++){   
-          gamesContainer.innerHTML += `<div>  
-            <img src="${gamesList[i].image}" alt="">
-            <p>hei</p>
-           </div>
-               `
-         }
+      for (let i = 0; i < gamesList.length; i++) {
+        gamesContainer.innerHTML += `<div class="game">  
+          <img src="${gamesList[i].image}" alt="">
+        </div>`
+      }
     
     } else{
       errorContainer.innerHTML = ""

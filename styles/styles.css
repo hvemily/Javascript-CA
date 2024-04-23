@@ -214,3 +214,20 @@ width: auto;
 gap: 10px;
 align-items: center;
 }
+
+
+
+/* games */ 
+
+.gamesList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.game img{
+  width: 100%;
+  max-width: 200px;
+}
