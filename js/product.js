@@ -1,7 +1,14 @@
+
+import { getfromStorage } from "./localstorage.js";
+
+import { cartCount } from "./count.js";
+
+let localStorageList = getfromStorage('key');
+
 const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 let gameInfo = {}
-//let localStorageList = getLocalKey("gameitem")
+
 
 const itemContainer = document.querySelector(".productItem");
 
@@ -10,6 +17,8 @@ const parameterString = window.location.search;
 const searchParameters = new URLSearchParams(parameterString);
 
 const arrId = searchParameters.get("gameid");
+
+const addToCart = document.querySelector('.addGame');
 
 console.log(arrId);
 
@@ -31,12 +40,12 @@ throw new Error('Network response was not ok');
 
 const result = await req.json();
 
-        let gameInfo = result
+        gameInfo = result;
 
         console.log("Should be all...", result)
 
         itemContainer.innerHTML = `
-                                    <div class="item">
+          <div class="item">
                                         <img src="${gameInfo.image}" alt="${gameInfo.title}">
                                         <div class="item-info">
                                             <div>
@@ -48,7 +57,8 @@ const result = await req.json();
                                             <p>Description: ${gameInfo.description}</p>
                                             <p>$ ${gameInfo.onSale ? gameInfo.discountedPrice : gameInfo.price}</p>
                                         </div>
-                                    </div>`;
+      </div>`;
+
     } catch(error){
         
         console.error('Fetch error:'); 
@@ -58,61 +68,15 @@ const result = await req.json();
 
 singleProductPage()
 
-const addGameBtn = document.getElementById("addGame");
+// cart functionality 
 
-addGameBtn.addEventListener("click", addItemToStorage);
-
-async function addItemToStorage(){
-
-  const req = await fetch(baseURL + arrId);
-
-  const gameInfo = await req.json()
-    let qty = 1; 
-
-    // Here we make our own array, which we can set into the localStorage
-    let gameToAdd = {
-        title: gameInfo.title,
-        url: gameInfo.image,
-        quantity: qty,
-        price: gameInfo.onSale ? gameInfo.discountedPrice : gameInfo.price,
-    }
-
-    const isGameStored = isItemincart(localStorageList, gameInfo.title) // See below function
-
-        if(!isGameStored){   //Depending on return of function below, if it returns TRUE, 'ELSE' will run
-                       // If item is not in localStorage the 'IF' will run and set the selfmade array into localStorage,
-        localStorageList.push(gameToAdd)
-
-        localStorage.setItem("gameitem", JSON.stringify(localStorageList))
-
-  } 
-  else {     
-
-    alert("Item is already in cart") // Indicate the user that the merch is in the cart already ( This allows only 1 item!)
-
-    //  !!  NOTE: Quantity increase is not needed in assignment. 
-
-  }
-}
-
-
-// this function works like this:
-// it's being used at line 107, inside the "()" we send key values at 'localStorageList' and 'movieDetail.data.title'
-// which we have access to already.
-// Info from localStorage is done by importing the function 'getLocalStorage.js' allowing us to see info
-// from the local storage.
-//
-// These words will then be put into the function below replacing  the value already represented inside 
-// the function.
-// 'item' becomes 'localStorageList' and titleToCheck becomes the title of the game (depending on the games we clicked)
-// replacing the words and makes the function work properly.
+addToCart.addEventListener('click', addToCartClicked);
 
 function isItemincart(item, titleToCheck){
 
+  function isItemInCart(item, titleToCheck){
     const found = item.some(obj => obj.title === titleToCheck);
-  
-    if(found) {
-      return true
+    return found;
     }
   }
 
@@ -126,4 +90,41 @@ function isItemincart(item, titleToCheck){
   
     return JSON.parse(savedInStorage)
     
+  }
+
+
+  function addToCartClicked(){
+    
+
+      let gameToAdd = {
+        image: gameDetail.image, 
+        title: gameDetail.title, 
+        price: gameDetail.onSale ? gameDetail .discountedPrice : gameDetail.price,
+        quantity: 1,
+      }
+
+    const gameInCart = isGameInCart(localStorageList, gameDetail.title);
+
+    if(!gameInCart)  {
+
+      localStorageList.push(gameToAdd);
+
+      localStorage.setItem("gameitem", JSON.stringify(localStorageList));
+       cartCount.textContent = cartCount(localStorageList)
+    }
+
+    else {
+      alert("The item is in the cart")
+    }
+  };
+
+
+  // Checking if game already in cart
+  function isGameInCart(item, titleToCheck){
+
+    const found = item.some(game => game.title === titleToCheck);
+
+    if(found){
+      return true
+    }
   }
