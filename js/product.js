@@ -9,6 +9,8 @@ const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 let gameInfo = {}
 
+let gameDetail = {}
+
 
 const itemContainer = document.querySelector(".productItem");
 
@@ -102,6 +104,7 @@ function isItemincart(item, titleToCheck){
         price: gameDetail.onSale ? gameDetail .discountedPrice : gameDetail.price,
         quantity: 1,
       }
+
 
     const gameInCart = isGameInCart(localStorageList, gameDetail.title);
 
