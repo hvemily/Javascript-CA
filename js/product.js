@@ -1,11 +1,18 @@
 import { cartCount } from "./count.js";
+import { getfromStorage } from "./fetchstorage.js";
+
+let localStorageList = getfromStorage('gameitem');
+
+
+let cartTotal = document.querySelector(".cartCount");
+
+cartTotal.textContent = cartCount(localStorageList);
+
 
 const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
-let localStorageList = getfromStorage('gameitem');
-let gameInfo = {}
-let gameDetail = {};
 
+let gameDetail = {};
 
 const itemContainer = document.querySelector(".productItem");
 const parameterString = window.location.search;     
@@ -33,22 +40,22 @@ throw new Error('Network response was not ok');
 
 const result = await req.json();
 
-        gameInfo = result;
+        gameDetail = result;
 
         console.log("Should be all...", result)
 
         itemContainer.innerHTML = `
           <div class="item">
-                                        <img src="${gameInfo.image}" alt="${gameInfo.title}">
+                                        <img src="${gameDetail.image}" alt="${gameDetail.title}">
                                         <div class="item-info">
                                             <div>
-                                                <h2>${gameInfo.title}</h2>
-                                                <p>${gameInfo.onSale ? "&#x2105;" : ""} </p>
+                                                <h2>${gameDetail.title}</h2>
+                                                <p>${gameDetail.onSale ? "&#x2105;" : ""} </p>
                                             </div>            
-                                            <p>Released: ${gameInfo.released}</p>
-                                            <p>Genre:${gameInfo.genre}</p>
-                                            <p>Description: ${gameInfo.description}</p>
-                                            <p>$ ${gameInfo.onSale ? gameInfo.discountedPrice : gameInfo.price}</p>
+                                            <p>Released: ${gameDetail.released}</p>
+                                            <p>Genre:${gameDetail.genre}</p>
+                                            <p>Description: ${gameDetail.description}</p>
+                                            <p>$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}</p>
                                         </div>
       </div>`;
 
@@ -64,28 +71,9 @@ singleProductPage()
 // cart functionality 
 
 addToCart.addEventListener('click', addToCartClicked);
-
-  function isItemInCart(item, titleToCheck){
-    const found = item.some(obj => obj.title === titleToCheck);
-    return found;
-    }
   
-
-
-  function getfromStorage(key) {
-    const savedInStorage = localStorage.getItem(key)
-  
-    if (!savedInStorage) {
-      return []
-    }
-  
-    return JSON.parse(savedInStorage)
-    
-  }
-
-
   function addToCartClicked(){
-    
+
 
       let gameToAdd = {
         image: gameDetail.image, 
@@ -102,7 +90,7 @@ addToCart.addEventListener('click', addToCartClicked);
       localStorageList.push(gameToAdd);
 
       localStorage.setItem("gameitem", JSON.stringify(localStorageList));
-       cartCount.textContent = cartCount(localStorageList)
+       cartTotal.textContent = cartCount(localStorageList)
     }
 
     else {
@@ -120,3 +108,4 @@ addToCart.addEventListener('click', addToCartClicked);
       return true
     }
   }
+

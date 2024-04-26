@@ -3,7 +3,11 @@ const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 export async function getGames(){   
    
+    showLoader();
+
         const req = await fetch(baseURL)
+
+        await delay(800);
 
         if(req.ok){
 
@@ -13,6 +17,8 @@ export async function getGames(){
                 error : false,
             }
     
+            hideLoader();
+
             return data 
     
 
@@ -25,6 +31,8 @@ export async function getGames(){
                 status : 404,
             }
     
+            hideLoader();
+
             return data
     
 
@@ -33,3 +41,20 @@ export async function getGames(){
      
    
     }
+
+
+ function showLoader() {
+    const loader = document.querySelector(".loader");
+    loader.style.display = "block";
+
+ }   
+ function hideLoader() {
+    const loader = document.querySelector(".loader");
+    loader.style.display = "none";
+
+ }   
+ function delay(ms) {
+    
+    return new Promise(resolve => setTimeout(resolve, ms));
+
+ }   

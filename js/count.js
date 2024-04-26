@@ -2,7 +2,7 @@ export function cartCount(arr){
 
   let qty = 0;
   for (let i = 0; i < arr.length; i++) {
-    qty += arr[i].quantity;
+    qty = arr.length;
   }
 
   return qty;
