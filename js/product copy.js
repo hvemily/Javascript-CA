@@ -1,16 +1,24 @@
+
+import { getfromStorage } from "./localstorage.js";
 import { cartCount } from "./count.js";
+
+let localStorageList = getfromStorage('gameitem');
 
 const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
-let localStorageList = getfromStorage('gameitem');
 let gameInfo = {}
+
 let gameDetail = {};
 
 
 const itemContainer = document.querySelector(".productItem");
+
 const parameterString = window.location.search;     
+
 const searchParameters = new URLSearchParams(parameterString);
+
 const arrId = searchParameters.get("gameid");
+
 const addToCart = document.querySelector('.addGame');
 
 console.log(arrId);
@@ -65,14 +73,16 @@ singleProductPage()
 
 addToCart.addEventListener('click', addToCartClicked);
 
+function isItemincart(item, titleToCheck){
+
   function isItemInCart(item, titleToCheck){
     const found = item.some(obj => obj.title === titleToCheck);
     return found;
     }
-  
+  }
 
 
-  function getfromStorage(key) {
+  function getLocalKey(key) {
     const savedInStorage = localStorage.getItem(key)
   
     if (!savedInStorage) {
