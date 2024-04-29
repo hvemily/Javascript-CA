@@ -18,7 +18,6 @@ cartTotal.textContent = cartCount(localStorageList);
     
       gamesList = allGames.games
 
-      console.log(gamesList);
     
       gamesContainer.innerHTML = ""
     
@@ -41,7 +40,6 @@ cartTotal.textContent = cartCount(localStorageList);
 
     }
 
-    console.log(gamesList);
 
 // filtering by genre
 
