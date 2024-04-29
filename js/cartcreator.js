@@ -1,6 +1,7 @@
 import { getfromStorage } from "./fetchstorage.js";
 
-let localStorageList = getfromStorage('gameitem');
+// Initialize localStorageList with cart items retrieved from localStorage
+let localStorageList = getfromStorage('gameitem') || [];
 
 const totalPrice = document.querySelector(".totalPrice");
 const cartTotal = document.querySelector(".cartCount");
@@ -61,14 +62,15 @@ function removeFromCart(event) {
   const title = event.target.dataset.title;
 
   // Filter out the item with the matching title from localStorageList
-  const updatedList = localStorageList.filter(item => item.title !== title);
+  localStorageList = localStorageList.filter(item => item.title !== title);
 
   // Update localStorage with the filtered list
-  localStorage.setItem("gameitem", JSON.stringify(updatedList));
+  localStorage.setItem("gameitem", JSON.stringify(localStorageList));
 
   // Refresh cart display based on the updated list
-  cartCreator(updatedList);
+  cartCreator(localStorageList);
 }
+
 
 
 

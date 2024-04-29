@@ -66,6 +66,8 @@ const result = await req.json();
     }
 } 
 
+
+
 singleProductPage()
 
 // cart function 

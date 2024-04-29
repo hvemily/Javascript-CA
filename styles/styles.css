@@ -4,6 +4,8 @@
 
 @import url(./loader.css);
 
+@import url(./ribbon.css);
+
 *{
   font-family: 'Inter', sans-serif;
 }
@@ -128,7 +130,6 @@ border-radius: 25px;
 background: white;
 }
 
-
 /*footer*/
 
 .footer-logo{
@@ -227,10 +228,23 @@ align-items: center;
   gap: 30px;
   margin-top: 50px;
   text-align: center;
+  margin: 0 auto;
 }
 
-.gamesList img{
+.gamesList div img{
   width: 100%;
   max-width: 350px;
 }
 
+/*main*/
+.image-container{
+  position: relative;
+  max-width: 350px;
+}
+
+.item-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

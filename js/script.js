@@ -23,15 +23,17 @@ cartTotal.textContent = cartCount(localStorageList);
       gamesContainer.innerHTML = ""
     
       for (let i = 0; i < gamesList.length; i++) {
-        gamesContainer.innerHTML += `<a class="item-card" href="./product/index.html?gameid=${gamesList[i].id}">  
-          <img src="${gamesList[i].image}" alt="">
-          <p>${gamesList[i].title}</p>
-          <div class="prices">
-          <p class="origprice">${gamesList[i].price}</p>
-          <p class="discprice">${gamesList[i].discountedPrice}</p>
-          </div>
-          
-        </a>`
+        gamesContainer.innerHTML += `<a class="item-card" href="./product/index.html?gameid=${gamesList[i].id}">                
+        <div class="image-container">
+          <img src="${gamesList[i].image}" alt="${gamesList[i].title}"/>
+          ${gamesList[i].onSale ? `<div class='ribbon'>%</div>` : ""}
+        </div>
+        <h3 class="title">${gamesList[i].title}</h3>
+        <div class="flex-sale">
+          <p class="${gamesList[i].onSale ? "on-sale" : ""}">${gamesList[i].onSale ? gamesList[i].price : ""}</p>
+          <p class="current-price">$ ${gamesList[i].onSale ? gamesList[i].discountedPrice : gamesList[i].price} </p>
+        </div>
+      </a>`;
       }
     
     } else{
@@ -62,6 +64,7 @@ function filterByGenre(event) {
         <div class="flex-sale">
           <p class="${gamesList[i].onSale ? "on-sale" : ""}">${gamesList[i].onSale ? gamesList[i].price : ""}</p>
           <p class="current-price">$ ${gamesList[i].onSale ? gamesList[i].discountedPrice : gamesList[i].price} </p>
+          ${gamesList[i].onSale ? `<div class='ribbon'>%</div>` : ""}
         </div>
       </a>`;
     }
