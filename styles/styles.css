@@ -26,6 +26,9 @@ a {
   display: none;
 }
 
+main {
+  min-height: 50vh;
+}
 /*footer*/
 
 footer{

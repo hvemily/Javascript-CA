@@ -60,29 +60,51 @@ export function cartCreator(arr){
   }
 }
 
-
 function removeFromCart(event) {
-   console.log("dataset", event); 
-   cartContainer.innerHTML = "";
-   const title = event.target.dataset.title; 
+  const title = event.target.dataset.title;
 
-   if (localStorageList.length === 1) {
-       cartContainer.innerHTML = "";
-       localStorage.clear("gameitem");
-       cartContainer.innerHTML = "<p class='empty'>It seems your cart is empty</p>";
+  // Filter out the item with the matching title
+  const updatedList = localStorageList.filter(item => item.title !== title);
 
-       totalPrice.textContent = "$" + 0;
-       cartTotal.textContent = 0;
-       return;
-   }
+  if (updatedList.length === 0) {
+      // If the updated list is empty, clear localStorage and display empty cart message
+      localStorage.removeItem("gameitem");
+      cartContainer.innerHTML = "<p class='empty'>It seems your cart is empty</p>";
+      totalPrice.textContent = "$" + 0;
+      cartTotal.textContent = 0;
+  } else {
+      // Update localStorage with the filtered list
+      localStorage.setItem("gameitem", JSON.stringify(updatedList));
 
-   const filterOut = localStorageList.filter(item => item.title !== title);
-   localStorageList = filterOut;
-   localStorage.setItem("gameitem", JSON.stringify(localStorageList));
-   //let html = cartCreator(localStorageList);
-   //cartContainer.appendChild(html);
-   cartContainer = cartCreator(localStorageList);
-
-   totalPrice.textContent = '$' + cartSumTotalPrice(localStorageList);
-   cartTotal.textContent = cartQtyTotalCount(localStorageList);
+      // Generate HTML string for the updated cart and render it
+      const htmlString = cartCreator(updatedList);
+      cartContainer.innerHTML = htmlString;
+  }
 }
+
+
+
+
+// function removeFromCart(event) {
+//    console.log("dataset", event); 
+//    cartContainer.innerHTML = "";
+//    const title = event.target.dataset.title; 
+
+//    if (localStorageList.length === 1) {
+//        cartContainer.innerHTML = "";
+//        localStorage.clear("gameitem");
+//        cartContainer.innerHTML = "<p class='empty'>It seems your cart is empty</p>";
+
+//        totalPrice.textContent = "$" + 0;
+//        cartTotal.textContent = 0;
+//        return;
+//    }
+
+//    const filterOut = localStorageList.filter(item => item.title !== title);
+//    localStorageList = filterOut;
+//    const htmlString = cartCreator(localStorageList);
+//    cartContainer.innerHTML = htmlString;   
+  //  cartContainer = cartCreator(localStorageList);
+
+  //  totalPrice.textContent = '$' + cartSumTotalPrice(localStorageList);
+  //  cartTotal.textContent = cartQtyTotalCount(localStorageList);

@@ -81,60 +81,7 @@ function filterByGenre(event) {
       <div class="flex-sale">
       <p class="${filteredList[i].onSale ? "on-sale" : ""}">${filteredList[i].onSale ? filteredList[i].price : ""}</p>
       <p class="current-price">$ ${filteredList[i].onSale ? filteredList[i].discountedPrice : filteredList[i].price} </p>
-                           </div>
-                         </a>`;
+</div>
+</a>`;
   }
 }
-
-
-// const selectOptions = document.querySelector(".selected-genre");
-// selectOptions.addEventListener("input", filterByGenre);
-
-
-// function filterByGenre(event) {
-
-//   let selectedGenre = event.target.value 
-
-
-//   console.log("hello", selectedGenre);
-
-//   let allGames = getGames()
-
-//   if (selectedGenre === "All"){
-
-//     gamesList = allGames.games;
-
-//     gamesContainer.innerHTML = ""
-
-//       for(let i = 0; i <gamesList.length; i++){
-//         gamesContainer.innerHTML += `<a class="item-card" href="/product/index.html?arrid=${gameList[i].id}">                
-//         <img src="${gameList[i].image}" alt="${gameList[i].title}"/>
-//         <h3 class="title">${gameList[i].title}</h3>
-//         <div class="flex-sale">
-//           <p class="${gameList[i].onSale ? "on-sale" : ""}">${gameList[i].onSale ? gameList[i].price : ""}</p>
-//           <p class="current-price">$ ${gameList[i].onSale ? gameList[i].discountedPrice : gameList[i].price} </p>
-//         </div>
-//       </a>` 
-//       }
-//       return
-//     }
-
-//   let filteredList = gamesList.filter(game => game.genre.toLowerCase() === selectedGenre.toLowerCase());
-
-//   console.log("new filter list to sort by: ", filteredList);
-
-
-//   gamesContainer.innerHTML = ""
-
-//   for (let i = 0; i < filteredList.length; i++){  // we use the previous variable of 'filteredList.length' that it has generated from before.
-//      gamesContainer.innerHTML += `<a class="item-card" href="/product/index.html?arrid=${filteredList[i].id}">                
-//       <img src="${filteredList[i].image}" alt="${filteredList[i].title}"/>
-//       <h3 class="title">${filteredList[i].title}</h3>
-//       <div class="flex-sale">
-//       <p class="${filteredList[i].onSale ? "on-sale" : ""}">${filteredList[i].onSale ? filteredList[i].price : ""}</p>
-//       <p class="current-price">$ ${filteredList[i].onSale ? filteredList[i].discountedPrice : filteredList[i].price} </p>
-//                            </div>
-//                          </a>`
-//    };
-//  };
-

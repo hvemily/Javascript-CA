@@ -34,7 +34,7 @@ async function singleProductPage() {
             <p>Error status: 404</p>
             <p>Something went wrong</p>
           </div>`;
-throw new Error('Network response was not ok');
+throw new Error('Network response not ok');
 
 }
 
@@ -42,7 +42,7 @@ const result = await req.json();
 
         gameDetail = result;
 
-        console.log("Should be all...", result)
+        console.log("Ok...", result)
 
         itemContainer.innerHTML = `
           <div class="item">
@@ -68,7 +68,7 @@ const result = await req.json();
 
 singleProductPage()
 
-// cart functionality 
+// cart function 
 
 addToCart.addEventListener('click', addToCartClicked);
   
@@ -94,12 +94,12 @@ addToCart.addEventListener('click', addToCartClicked);
     }
 
     else {
-      alert("The item is in the cart")
+      alert("The item is already in the cart")
     }
   };
 
 
-  // Checking if game already in cart
+  // To check if game is in cart
   function isGameInCart(item, titleToCheck){
 
     const found = item.some(game => game.title === titleToCheck);

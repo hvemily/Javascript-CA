@@ -19,7 +19,7 @@ if (localStorageList.length > 0){
 
 } else{
 
-   cartContainer.innerHTML = "<p class='empty'>It seems your cart is empty</p>"
+cartContainer.innerHTML = "<p class='empty'>Your cart is empty</p>"
 
 }
 
