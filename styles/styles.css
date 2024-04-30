@@ -251,3 +251,50 @@ img {
   justify-content: flex-start;
   align-items: center;
 }
+
+.on-sale{
+  color: red;
+  margin-right: 10px;
+}
+
+.flex-sale{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0;
+
+}
+
+
+
+.blackfriday{
+  margin-top: 2rem;
+  font-size: 35px;
+  text-align: center;
+  color: #ffffff;
+    text-shadow:
+      0 0 1px #fff,
+      0 0 4px #fff,
+      0 0 19px #fff,
+      0 0 40px rgb(255, 0, 247),
+      0 0 82px rgb(255, 0, 247),
+      0 0 100px rgb(255, 0, 247);
+  
+}
+
+.selected-genre{
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 67px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  background-color: black;
+  color: white;
+  border-color: white;
+}
+
+
+.title{
+  margin-bottom: 0;
+}

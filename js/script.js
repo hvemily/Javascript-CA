@@ -25,7 +25,7 @@ cartTotal.textContent = cartCount(localStorageList);
         gamesContainer.innerHTML += `<a class="item-card" href="./product/index.html?gameid=${gamesList[i].id}">                
         <div class="image-container">
           <img src="${gamesList[i].image}" alt="${gamesList[i].title}"/>
-          ${gamesList[i].onSale ? `<div class='ribbon'>%</div>` : ""}
+          ${gamesList[i].onSale ? `<div class='ribbon'>SALE</div>` : ""}
         </div>
         <h3 class="title">${gamesList[i].title}</h3>
         <div class="flex-sale">
