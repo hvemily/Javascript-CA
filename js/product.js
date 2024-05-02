@@ -1,4 +1,5 @@
 import { cartCount } from "./count.js";
+import { getGames } from "./fetch-api.js";
 import { getfromStorage } from "./fetchstorage.js";
 
 let localStorageList = getfromStorage('gameitem');
@@ -19,8 +20,6 @@ const parameterString = window.location.search;
 const searchParameters = new URLSearchParams(parameterString);
 const arrId = searchParameters.get("gameid");
 const addToCart = document.querySelector('.addGame');
-
-console.log(arrId);
 
 async function singleProductPage() {
     try{
@@ -59,6 +58,7 @@ const result = await req.json();
                                             <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
                                         </div>
                                         </div>`;
+
 
     } catch(error){
         

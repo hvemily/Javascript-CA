@@ -308,7 +308,22 @@ img {
 .item{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: top, center;
+    justify-content: space-evenly;
+    align-items: top;
     text-align: start;
+}
+
+.item-info{
+  max-width: 250px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.addGame{
+  background-color: black;
+  color: white;
+  border: solid;
+  border-width: 0.1px;
+  padding: 10px;
 }

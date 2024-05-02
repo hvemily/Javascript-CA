@@ -40,6 +40,8 @@ export async function getGames(){
     }
 
 
+//loader function 
+
 function showLoader() {
     const loader = document.querySelector(".loader");
     loader.style.display = "block";
