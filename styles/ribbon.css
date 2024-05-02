@@ -3,9 +3,6 @@
   font-size: 28px;
   font-weight: bold;
   color: #fff;
-  position: absolute;
-  top: 5px;
-  left: 0px;
 }
 .ribbon {
   --r: .8em; /* control the cutout */

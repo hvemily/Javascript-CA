@@ -223,7 +223,7 @@ img {
 }
 
 
-/* games */ 
+/*main*/ 
 
 .gamesList {
   display: grid;
@@ -237,12 +237,18 @@ img {
 .gamesList div img{
   width: 100%;
   max-width: 350px;
-}
+} 
 
-/*main*/
+
 .image-container{
   position: relative;
   max-width: 350px;
+}
+
+.image-container .ribbon{
+  position: absolute;
+  top: 5px;
+  left: 0px;
 }
 
 .item-card{
@@ -264,8 +270,6 @@ img {
   margin-top: 0;
 
 }
-
-
 
 .blackfriday{
   margin-top: 2rem;
@@ -297,4 +301,14 @@ img {
 
 .title{
   margin-bottom: 0;
+}
+
+/*product page*/
+
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: top, center;
+    text-align: start;
 }

@@ -45,19 +45,20 @@ const result = await req.json();
         console.log("Ok...", result)
 
         itemContainer.innerHTML = `
-          <div class="item">
-                                        <img src="${gameDetail.image}" alt="${gameDetail.title}">
-                                        <div class="item-info">
-                                            <div>
-                                                <h2>${gameDetail.title}</h2>
-                                                <p>${gameDetail.onSale ? "&#x2105;" : ""} </p>
-                                            </div>            
+                                          <div class="item">
+                                            <div class="selected-image-container">
+                                            <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
+                                            ${gameDetail.onSale ? `<div class='ribbon'>SALE</div>` : ""}
+                                            </div>
+                                            <div class="item-info">
+                                            <h2>${gameDetail.title}</h2>            
                                             <p>Released: ${gameDetail.released}</p>
                                             <p>Genre:${gameDetail.genre}</p>
                                             <p>Description: ${gameDetail.description}</p>
-                                            <p>$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}</p>
+                                            <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
+                                            <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
                                         </div>
-      </div>`;
+                                        </div>`;
 
     } catch(error){
         
