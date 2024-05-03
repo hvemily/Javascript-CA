@@ -49,7 +49,7 @@ function filterByGenre(event) {
   let selectedGenre = event.target.value;
 
   if (selectedGenre === "All") {
-    // Reset gamesList to all games
+    // Resetting gamesList to all games
     gamesList = allGames.games;
 
     gamesContainer.innerHTML = "";

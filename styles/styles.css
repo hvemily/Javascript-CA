@@ -255,7 +255,7 @@ img {
 
 .image-container .ribbon{
   position: absolute;
-  top: 50px;
+  top: 28px;
   left: 0px;
 }
 
@@ -272,11 +272,9 @@ img {
   justify-content: space-around;
 }
 
-.current-price{
-  color: red;
-}
-
 .on-sale{
+  color: red;
+  margin-right: 10px;
 }
 
 .flex-sale{
@@ -284,7 +282,6 @@ img {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 0;
-
 }
 
 .blackfriday{
@@ -321,6 +318,12 @@ img {
 
 /*product page*/
 
+h2 {
+  font-size: 50px;
+  margin-top: 0px;
+  padding: 0px;
+}
+
 .addGame{
   background-color: black;
   color: white;
@@ -340,6 +343,8 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .insertImg{
@@ -347,11 +352,15 @@ img {
 
   .ribbon {
     position: absolute;
-    top: 50px;
+    top: 28px;
     left: 0px;
   }
 }
 
 .productInfo{
   max-width: 350px;
+}
+
+.prices{
+  
 }

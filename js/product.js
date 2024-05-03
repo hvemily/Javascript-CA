@@ -25,6 +25,7 @@ const addToCart = document.querySelector('.addGame');
 async function singleProductPage() {
     try{
 
+
         const req = await fetch(baseURL + arrId);
 
         if(!req.ok){ 
@@ -58,25 +59,6 @@ const result = await req.json();
                                   <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}</p>
                                   </div>
                                   `;
-
-
-
-
-                    // itemContainer.innerHTML =
-                    //                       `<div class="item">
-                    //                         <div class="selected-image-container">
-                    //                         <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
-                    //                         ${gameD|etail.onSale ? `<div class='ribbon'>SALE</div>` : ""}
-                    //                         </div>
-                    //                         <div class="item-info">
-                    //                         <h2>${gameDetail.title}</h2>            
-                    //                         <p>Released: ${gameDetail.released}</p>
-                    //                         <p>Genre:${gameDetail.genre}</p>
-                    //                         <p>Description: ${gameDetail.description}</p>
-                    //                         <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
-                    //                         <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
-                    //                     </div>
-                    //                     </div>`;
 
 
     } catch(error){
@@ -132,4 +114,3 @@ addToCart.addEventListener('click', addToCartClicked);
       return true
     }
   }
-
