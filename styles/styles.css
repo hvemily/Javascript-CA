@@ -30,6 +30,13 @@ a {
 
 main {
   min-height: 50vh;
+  width: 100%;
+  max-width: 85rem;
+  margin: 0 auto;
+
+  @media (max-width: 1360px) {
+    width: 95%;
+  }
 }
 /*footer*/
 
@@ -143,6 +150,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 margin-bottom: 25px;
+margin-top: 50px;
 }
 
 .footer-desktop{
@@ -247,7 +255,7 @@ img {
 
 .image-container .ribbon{
   position: absolute;
-  top: 5px;
+  top: 50px;
   left: 0px;
 }
 
@@ -258,9 +266,17 @@ img {
   align-items: center;
 }
 
-.on-sale{
+.prices{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.current-price{
   color: red;
-  margin-right: 10px;
+}
+
+.on-sale{
 }
 
 .flex-sale{
@@ -305,36 +321,37 @@ img {
 
 /*product page*/
 
-.item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: top;
-    text-align: start;
-}
-
-.item-info{
-  max-width: 250px;
-  margin-bottom: 0px;
-  display: flex;
-  flex-direction: column;
-}
-
 .addGame{
   background-color: black;
   color: white;
   border: solid;
   border-width: 0.1px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .productItem{
   display: flex;
   flex-direction: column;
+  max-width: 300px;
 }
 
 .product-intel{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.insertImg{
+  position: relative;
+
+  .ribbon {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+  }
+}
+
+.productInfo{
+  max-width: 350px;
 }

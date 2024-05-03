@@ -15,7 +15,7 @@ const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 let gameDetail = {};
 
-const itemContainer = document.querySelector(".productItem");
+const itemContainer = document.querySelector(".insertInfo");
 const imageContainer = document.querySelector(".insertImg")
 const parameterString = window.location.search;     
 const searchParameters = new URLSearchParams(parameterString);
@@ -53,8 +53,10 @@ const result = await req.json();
                                   <p>Released: ${gameDetail.released}</p>
                                   <p>Genre:${gameDetail.genre}</p>
                                   <p>Description: ${gameDetail.description}</p>
+                                  <div class = "prices">
                                   <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
-                                  <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
+                                  <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}</p>
+                                  </div>
                                   `;
 
 
