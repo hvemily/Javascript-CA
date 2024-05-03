@@ -44,14 +44,14 @@ export function cartCreator(arr) {
     const btn = document.createElement("button");
     btn.classList.add('itemRemover');
     btn.dataset.title = item.title;
-    btn.textContent = "X";
+    btn.textContent = "Remove";
     btn.addEventListener("click", removeFromCart);
     singleCard.appendChild(btn);
 
     itemWrapper.appendChild(singleCard);
   });
 
-  // Calculating total and updating the cart total display
+
   const total = arr.reduce((acc, item) => acc + (item.price * item.quantity), 0);
   totalPrice.textContent = "$" + total;
   cartTotal.textContent = arr.length;
@@ -60,13 +60,10 @@ export function cartCreator(arr) {
 function removeFromCart(event) {
   const title = event.target.dataset.title;
 
-  // Filter out item with matching title from localStorageList
   localStorageList = localStorageList.filter(item => item.title !== title);
 
-  // Updating localStorage with filtered list
   localStorage.setItem("gameitem", JSON.stringify(localStorageList));
 
-  // Refresh cart display based on the updated list
   cartCreator(localStorageList);
 }
 

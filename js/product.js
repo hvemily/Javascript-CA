@@ -25,7 +25,6 @@ const addToCart = document.querySelector('.addGame');
 async function singleProductPage() {
     try{
 
-
         const req = await fetch(baseURL + arrId);
 
         if(!req.ok){ 
@@ -105,7 +104,7 @@ addToCart.addEventListener('click', addToCartClicked);
   
 
 
-  // To check if game is in cart
+  // check if game is in cart
   function isGameInCart(item, titleToCheck){
 
     const found = item.some(game => game.title === titleToCheck);

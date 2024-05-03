@@ -320,7 +320,7 @@ img {
 /*product page*/
 
 h2 {
-  font-size: 50px;
+  font-size: 30px;
   margin-top: 0px;
   padding: 0px;
 }
@@ -366,3 +366,17 @@ h2 {
 .prices{
   
 }
+
+/*checkout*/
+
+h1{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.singleCard{
+  margin-bottom: 50px;
+  text-align: center;
+}
+
