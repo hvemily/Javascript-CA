@@ -275,6 +275,7 @@ img {
 .on-sale{
   color: red;
   margin-right: 10px;
+  font-weight: 700;
 }
 
 .flex-sale{
@@ -329,8 +330,9 @@ h2 {
   color: white;
   border: solid;
   border-width: 0.1px;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .productItem{
