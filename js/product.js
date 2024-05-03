@@ -16,6 +16,7 @@ const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 let gameDetail = {};
 
 const itemContainer = document.querySelector(".productItem");
+const imageContainer = document.querySelector(".insertImg")
 const parameterString = window.location.search;     
 const searchParameters = new URLSearchParams(parameterString);
 const arrId = searchParameters.get("gameid");
@@ -33,7 +34,7 @@ async function singleProductPage() {
             <p>Error status: 404</p>
             <p>Something went wrong</p>
           </div>`;
-throw new Error('Network response not ok');
+        throw new Error('Network response not ok');
 
 }
 
@@ -41,23 +42,39 @@ const result = await req.json();
 
         gameDetail = result;
 
-        console.log("Ok...", result)
+
+        imageContainer.innerHTML = `
+                                    <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
+                                    <div class='ribbon'>SALE</div>`;
+                                    
 
         itemContainer.innerHTML = `
-                                          <div class="item">
-                                            <div class="selected-image-container">
-                                            <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
-                                            ${gameDetail.onSale ? `<div class='ribbon'>SALE</div>` : ""}
-                                            </div>
-                                            <div class="item-info">
-                                            <h2>${gameDetail.title}</h2>            
-                                            <p>Released: ${gameDetail.released}</p>
-                                            <p>Genre:${gameDetail.genre}</p>
-                                            <p>Description: ${gameDetail.description}</p>
-                                            <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
-                                            <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
-                                        </div>
-                                        </div>`;
+                                  <h2>${gameDetail.title}</h2>            
+                                  <p>Released: ${gameDetail.released}</p>
+                                  <p>Genre:${gameDetail.genre}</p>
+                                  <p>Description: ${gameDetail.description}</p>
+                                  <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
+                                  <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
+                                  `;
+
+
+
+
+                    // itemContainer.innerHTML =
+                    //                       `<div class="item">
+                    //                         <div class="selected-image-container">
+                    //                         <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
+                    //                         ${gameD|etail.onSale ? `<div class='ribbon'>SALE</div>` : ""}
+                    //                         </div>
+                    //                         <div class="item-info">
+                    //                         <h2>${gameDetail.title}</h2>            
+                    //                         <p>Released: ${gameDetail.released}</p>
+                    //                         <p>Genre:${gameDetail.genre}</p>
+                    //                         <p>Description: ${gameDetail.description}</p>
+                    //                         <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
+                    //                         <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price} </p>
+                    //                     </div>
+                    //                     </div>`;
 
 
     } catch(error){
