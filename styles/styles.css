@@ -445,8 +445,6 @@ h1{
   padding: 10px;
   cursor: pointer;
   font-size: 18px;
-  margin-bottom: 30px;
-  margin-top: 30px;
   text-align: center;
 }
 
@@ -462,4 +460,5 @@ h1{
 .gameover{
   margin-bottom: 15px;
   margin-top: 15px;
+  width: 200px;
 }
