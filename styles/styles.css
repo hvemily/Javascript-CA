@@ -440,13 +440,22 @@ h1{
 }
 
 .explore-more{
+  justify-content: center;
   background-color: black;
   color: white;
   border: solid;
   border-width: 0.1px;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
   font-size: 18px;
   margin-bottom: 30px;
-  margin-top: 0px;
+  margin-top: 30px;
+}
+
+.confirmation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
 }
