@@ -369,9 +369,6 @@ h2 {
   max-width: 350px;
 }
 
-.prices{
-  
-}
 
 /*checkout*/
 
@@ -460,4 +457,9 @@ h1{
   margin: 0 auto;
   align-items: center;
   text-align: center;
+}
+
+.gameover{
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
