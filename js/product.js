@@ -34,7 +34,9 @@ async function singleProductPage() {
             <p>Error status: 404</p>
             <p>Something went wrong</p>
           </div>`;
-        throw new Error('Network response not ok');
+          
+          
+          throw new Error('Network response not ok');
 
 }
 

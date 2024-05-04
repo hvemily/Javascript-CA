@@ -63,6 +63,11 @@ h6{
 
 /*DESKTOP*/
 
+.back-sign{
+  width: 20px;
+  margin-left: 80px;
+}
+
 /*header*/
 .nav-grid, .logo, .burger{
   display: none;
@@ -423,4 +428,12 @@ h1{
   cursor: pointer;
   font-size: 14px;
   margin-bottom: 30px;
+}
+
+/*confirmation*/
+
+.thanks{
+  width: 395px;
+  margin: 0 auto;
+  text-align: center;
 }
