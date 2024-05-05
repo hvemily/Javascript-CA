@@ -3,7 +3,7 @@ import { getfromStorage } from "./fetchstorage.js";
 let localStorageList = getfromStorage('gameitem') || [];
 
 const totalPrice = document.querySelector(".totalPrice");
-const cartTotal = document.querySelectorAll(".cartCount");
+const cartTotal = document.querySelector(".cartCount");
 const cartContainer = document.querySelector(".cartInfo");
 
 const itemWrapper = document.createElement('div');
