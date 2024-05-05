@@ -45,21 +45,26 @@ const result = await req.json();
         gameDetail = result;
 
 
-        imageContainer.innerHTML = `
-                                    <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
-                                    <div class='ribbon'>SALE</div>`;
+        imageContainer.innerHTML =`
+        <img src="${gameDetail.image}" alt="${gameDetail.title}"/>
+        ${gameDetail.onSale ? '<div class="ribbon">SALE</div>' : ''}
+    `;
                                     
 
         itemContainer.innerHTML = `
-                                  <h2>${gameDetail.title}</h2>            
-                                  <p>Released: ${gameDetail.released}</p>
-                                  <p>Genre:${gameDetail.genre}</p>
-                                  <p>Description: ${gameDetail.description}</p>
-                                  <div class = "prices">
-                                  <p class="${gameDetail.onSale ? "on-sale" : ""}">${gameDetail.onSale ? "$" + gameDetail.price : ""}</p>
-                                  <p class="current-price">$ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}</p>
-                                  </div>
-                                  `;
+        <h2>${gameDetail.title}</h2>            
+        <p>Released: ${gameDetail.released}</p>
+        <p>Genre: ${gameDetail.genre}</p>
+        <p>Description: ${gameDetail.description}</p>
+        <div class="prices">
+            <p class="${gameDetail.onSale ? "on-sale" : ""}">
+                ${gameDetail.onSale ? "$" + gameDetail.price : ""}
+            </p>
+            <p class="current-price">
+                $ ${gameDetail.onSale ? gameDetail.discountedPrice : gameDetail.price}
+            </p>
+        </div>
+    `;
 
 
     } catch(error){
@@ -95,7 +100,7 @@ addToCart.addEventListener('click', addToCartClicked);
       localStorageList.push(gameToAdd);
 
       localStorage.setItem("gameitem", JSON.stringify(localStorageList));
-       cartTotal.textContent = cartCount(localStorageList)
+      cartTotal.textContent = cartCount(localStorageList)
     }
 
     else {
