@@ -10,6 +10,8 @@ let cartTotal = document.querySelector(".cartCount");
 cartTotal.textContent = cartCount(localStorageList);
 
 
+
+
 const baseURL = "https://api.noroff.dev/api/v1/gamehub/"
 
 

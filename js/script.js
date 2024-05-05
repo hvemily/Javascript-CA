@@ -7,7 +7,6 @@ let localStorageList = getfromStorage('gameitem');
 let cartTotal = document.querySelector(".cartCount");
 cartTotal.textContent = cartCount(localStorageList);
 
-
     const gamesContainer = document.querySelector(".gamesList")
 
     let allGames = await getGames()

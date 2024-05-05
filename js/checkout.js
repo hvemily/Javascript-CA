@@ -7,11 +7,14 @@ let localStorageList = getfromStorage('gameitem');
 const totalPrice = document.querySelector(".totalPrice")
 const cartTotal = document.querySelector(".cartCount")
 
+
 const purchaseBtn = document.querySelector(".purchaseBtn")
 
 
 let cartContainer = document.querySelector(".cartInfo");
 cartTotal.textContent = cartCount(localStorageList);
+
+cartTotalMobile.textContent = cartCount(localStorageList);
 
 if (localStorageList.length > 0){
 
