@@ -4,8 +4,14 @@ import { getfromStorage } from "./fetchstorage.js";
 
 let localStorageList = getfromStorage('gameitem');
 
-let cartTotal = document.querySelector(".cartCount");
-cartTotal.textContent = cartCount(localStorageList);
+// let cartTotal = document.querySelector(".cartCount");
+// cartTotal.textContent = cartCount(localStorageList);
+
+let cartTotalElements = document.querySelectorAll(".cartCount");
+
+cartTotalElements.forEach(cartTotal => {
+    cartTotal.textContent = cartCount(localStorageList);
+});
 
     const gamesContainer = document.querySelector(".gamesList")
 

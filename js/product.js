@@ -5,9 +5,15 @@ import { getfromStorage } from "./fetchstorage.js";
 let localStorageList = getfromStorage('gameitem');
 
 
-let cartTotal = document.querySelector(".cartCount");
+// let cartTotal = document.querySelector(".cartCount");
 
-cartTotal.textContent = cartCount(localStorageList);
+// cartTotal.textContent = cartCount(localStorageList);
+
+let cartTotalElements = document.querySelectorAll(".cartCount");
+
+cartTotalElements.forEach(cartTotal => {
+    cartTotal.textContent = cartCount(localStorageList);
+});
 
 
 
@@ -98,14 +104,15 @@ addToCart.addEventListener('click', addToCartClicked);
     const gameInCart = isGameInCart(localStorageList, gameDetail.title);
 
     if(!gameInCart)  {
-
       localStorageList.push(gameToAdd);
-
       localStorage.setItem("gameitem", JSON.stringify(localStorageList));
-      cartTotal.textContent = cartCount(localStorageList)
-    }
 
-    else {
+      // Update all elements with class 'cartCount' after adding to cart
+      cartTotalElements.forEach(cartTotal => {
+          cartTotal.textContent = cartCount(localStorageList);
+      });
+
+    } else {
       alert("The item is already in the cart")
     }
   };
@@ -115,10 +122,5 @@ addToCart.addEventListener('click', addToCartClicked);
 
   // check if game is in cart
   function isGameInCart(item, titleToCheck){
-
-    const found = item.some(game => game.title === titleToCheck);
-
-    if(found){
-      return true
-    }
-  }
+    return item.some(game => game.title === titleToCheck);
+}

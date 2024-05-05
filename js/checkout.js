@@ -14,7 +14,7 @@ const purchaseBtn = document.querySelector(".purchaseBtn")
 let cartContainer = document.querySelector(".cartInfo");
 cartTotal.textContent = cartCount(localStorageList);
 
-cartTotalMobile.textContent = cartCount(localStorageList);
+cartTotal.textContent = cartCount(localStorageList);
 
 if (localStorageList.length > 0){
 
