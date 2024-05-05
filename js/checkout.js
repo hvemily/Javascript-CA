@@ -5,7 +5,7 @@ import { cartCreator } from "./cartcreator.js";
 let localStorageList = getfromStorage('gameitem');
 
 const totalPrice = document.querySelector(".totalPrice")
-const cartTotal = document.querySelector(".cartCount")
+const cartTotal = document.querySelectorAll(".cartCount")
 
 const purchaseBtn = document.querySelector(".purchaseBtn")
 
