@@ -4,8 +4,6 @@ import { getfromStorage } from "./fetchstorage.js";
 
 let localStorageList = getfromStorage('gameitem');
 
-// let cartTotal = document.querySelector(".cartCount");
-// cartTotal.textContent = cartCount(localStorageList);
 
 let cartTotalElements = document.querySelectorAll(".cartCount");
 
@@ -54,7 +52,7 @@ function filterByGenre(event) {
   let selectedGenre = event.target.value;
 
   if (selectedGenre === "All") {
-    // Resetting gamesList to all games
+    // Resetting 
     gamesList = allGames.games;
 
     gamesContainer.innerHTML = "";

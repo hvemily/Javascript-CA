@@ -4,11 +4,6 @@ import { getfromStorage } from "./fetchstorage.js";
 
 let localStorageList = getfromStorage('gameitem');
 
-
-// let cartTotal = document.querySelector(".cartCount");
-
-// cartTotal.textContent = cartCount(localStorageList);
-
 let cartTotalElements = document.querySelectorAll(".cartCount");
 
 cartTotalElements.forEach(cartTotal => {
@@ -107,7 +102,7 @@ addToCart.addEventListener('click', addToCartClicked);
       localStorageList.push(gameToAdd);
       localStorage.setItem("gameitem", JSON.stringify(localStorageList));
 
-      // Update all elements with class 'cartCount' after adding to cart
+
       cartTotalElements.forEach(cartTotal => {
           cartTotal.textContent = cartCount(localStorageList);
       });
