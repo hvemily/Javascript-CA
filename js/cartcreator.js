@@ -38,7 +38,7 @@ export function cartCreator(arr) {
     singleCard.appendChild(qty);
 
     const price = document.createElement('p');
-    price.textContent = item.price;
+    price.textContent = "$" + item.price;
     singleCard.appendChild(price);
 
     const btn = document.createElement("button");
