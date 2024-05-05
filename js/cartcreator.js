@@ -34,7 +34,7 @@ export function cartCreator(arr) {
     singleCard.appendChild(title);
 
     const qty = document.createElement('p');
-    qty.textContent = item.quantity;
+    qty.textContent = "Qty:" + " " + item.quantity;
     singleCard.appendChild(qty);
 
     const price = document.createElement('p');
