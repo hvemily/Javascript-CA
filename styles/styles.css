@@ -463,6 +463,12 @@ h1{
 }
 }
 
+.empty{
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 899px) {
 
   /*global*/
