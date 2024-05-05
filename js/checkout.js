@@ -23,7 +23,7 @@ cartContainer.innerHTML = "<p class='empty'>Your cart is empty</p>"
 
 }
 
-totalPrice.textContent = "$" + cartSumTotalPrice(localStorageList);
+totalPrice.textContent = "$" + cartSumTotalPrice(localStorageList).toFixed(2);
 
 purchaseBtn.addEventListener("click", purchaseConfirmed);
 

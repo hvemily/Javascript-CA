@@ -1,14 +1,17 @@
+import { cartCount } from "./count.js";
 import { getfromStorage } from "./fetchstorage.js";
 
 let localStorageList = getfromStorage('gameitem') || [];
 
 const totalPrice = document.querySelector(".totalPrice");
 const cartTotal = document.querySelector(".cartCount");
+
 const cartContainer = document.querySelector(".cartInfo");
 
 const itemWrapper = document.createElement('div');
 itemWrapper.classList.add('gameWrapper');
 cartContainer.appendChild(itemWrapper);
+
 
 export function cartCreator(arr) {
   itemWrapper.innerHTML = "";
