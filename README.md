@@ -25,7 +25,7 @@ The following pages were required to complete the assignment:
 - **Checkout Page**: Displays all items in the basket. `checkout/index.html`
 - **Confirmation Page**: Shows a thank you message after checking out. `checkout/confirmation/index.html`
 
-### Optional Pages
+## Optional Pages
 
 These pages are optional but improve realism and user experience:
 
@@ -65,7 +65,7 @@ The GameHub API was selected for this submission.
 
 3. Open index.html in your browser to view the project locally.
 
-##How to Use
+## How to Use
 - On the Home Page, users can browse through the available products fetched from the API.
 - Users can filter the products by category, gender, or genre.
 - On the Product Page, users can view detailed information about a selected product.
@@ -73,19 +73,19 @@ The GameHub API was selected for this submission.
 - On the Checkout Page, users can view all items in their basket and proceed to checkout.
 - The Confirmation Page displays a thank you message after a successful order.
 
-##Important Features
+## Important Features
 - Error handling: Alerts the user when an API call fails.
 - Loading indicator: A loading icon appears while fetching data.
 - No hardcoded product data: All product data is fetched from the API.
 
-##Accessibility: The site is accessible and follows best practices for usability.
+## Accessibility: The site is accessible and follows best practices for usability.
 
 Clean code: All console.log statements were removed before submission.
 
-##License
+## License
 This project is licensed under the Noroff License.
 
-##Contact
+## Contact
 For any questions or feedback, feel free to contact me at emily.brynestad@hotmail.com or here at GitHub.
 
 
